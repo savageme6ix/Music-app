@@ -9,10 +9,6 @@ const PORT = process.env.PORT;
 app.use(express.json());
 
 app.use("/api/users", userRoutes);
-app.get("/", (req, res) => {
-    res.send("Server is working!");
-});
-
 
 app.listen(PORT, ()=>{
     console.log("Server running", PORT);
