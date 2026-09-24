@@ -1,6 +1,12 @@
 import express from "express";
 import dotenv from "dotenv";
 import userRoutes from "./routes/userRoutes.js";
+import authRoutes from "./routes/authRoutes.js";
+import adminRoutes from "./routes/adminRoutes.js";
+import songRoutes from "./routes/songRoutes.js";
+import albumRoutes from "./routes/albumRoutes.js";
+import statRoutes from "./routes/statRoutes.js";
+import { connectDB } from "../lib/db.js";
 
 dotenv.config();
 
@@ -17,4 +23,5 @@ app.use("/api/stats", statRoutes);
 
 app.listen(PORT, ()=>{
     console.log("Server running", PORT);
+    connectDB();
 })
