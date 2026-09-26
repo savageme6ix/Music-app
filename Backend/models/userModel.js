@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
     fullName:{
-        typeof:String,
+        type:String,
         required: true
     },
     imageUrl:{
@@ -13,8 +13,7 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:true,
         unique:true,
-    },
-    timestamps:true //createdAt, updatedAt
-});
+    } 
+}, {timestamps:true}); //createdAt, updatedAt
 
 export const User = mongoose.model("User",userSchema);
